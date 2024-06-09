@@ -17,6 +17,7 @@ import tokenRoutes from './routes/tokenRoutes';
 import usuarioRoutes from './routes/usuarioRoutes';
 import { logger, resource, responderAPI } from './utils/commons';
 import path from 'path';
+import dbConnect from './utils/dbConnect';
 //#endregion imports
 
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
@@ -26,7 +27,11 @@ if (!uri) {
     throw new Error(resource('erro.variavelAmbiente'));
 }
 
-mongoose.connect(uri);
+dbConnect().then(() => {
+    console.log('Connected to MongoDB');
+}).catch(err => {
+    console.error('Error connecting to MongoDB:', err.message);
+});
 
 const app = express();
 

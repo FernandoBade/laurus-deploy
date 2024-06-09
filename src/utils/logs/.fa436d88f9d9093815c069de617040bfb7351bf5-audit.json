@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "C:\\GitHub\\laurus-deploy\\src\\utils\\logs\\.fa436d88f9d9093815c069de617040bfb7351bf5-audit.json",
+    "files": [
+        {
+            "date": 1717966716755,
+            "name": "C:\\GitHub\\laurus-deploy\\src\\utils\\logs\\laurus-09-06-2024.log",
+            "hash": "d27015db7608cc04cac2117025594524e7c080702782ad5e3e1cb8b533eab87a"
+        }
+    ],
+    "hashType": "sha256"
+}
