@@ -48,8 +48,67 @@ export function formatarNumero(numero: number, opcoes?: Object): string {
 }
 //#endregion _i18next
 
-//#region _logger
-const logPath = path.join(__dirname, './logs/');
+// //#region _logger
+// const logPath = path.join(__dirname, './logs/');
+
+// const customLevels = {
+//     levels: {
+//         emerg: 0,
+//         alert: 1,
+//         crit: 2,
+//         error: 3,
+//         warning: 4,
+//         success: 5,
+//         info: 6,
+//         notice: 7,
+//     },
+//     colors: {
+//         emerg: 'magenta',
+//         alert: 'grey bold',
+//         crit: 'red',
+//         error: 'red bold',
+//         warning: 'yellow bold',
+//         success: 'green bold',
+//         info: 'green bold',
+//         notice: 'grey',
+//     },
+// };
+
+// addColors(customLevels.colors);
+
+// export const logger = createLogger({
+//     levels: customLevels.levels,
+//     format: format.combine(
+//         format.timestamp({ format: 'DD-MM-YYYY HH:mm:ss' }),
+//         format.json(),
+//         format.printf(({ timestamp, level, message }) => `${timestamp} [${level}]: ${message}`)
+//     ),
+//     transports: [
+//         new transports.Console({
+//             level: 'notice',
+//             format: format.combine(
+//                 format.colorize({ all: true }),
+//                 format.printf(({ timestamp, level, message }) => `${timestamp} [${level}]: ${message}`)
+//             )
+//         }),
+//         new transports.DailyRotateFile({
+//             filename: `${logPath}/laurus-%DATE%.log`,
+//             datePattern: 'DD-MM-YYYY',
+//             zippedArchive: true,
+//             maxSize: '20m',
+//             maxFiles: '30d',
+//             level: 'notice',
+//             format: format.combine(
+//                 format.timestamp({ format: 'DD-MM-YYYY HH:mm:ss' }),
+//                 format.printf(({ timestamp, level, message }) => `${timestamp} [${level}]: ${message}`)
+//             ),
+//         }),
+//     ],
+// });
+
+// export default logger;
+// //#endregion _logger
+
 
 const customLevels = {
     levels: {
@@ -91,23 +150,10 @@ export const logger = createLogger({
                 format.printf(({ timestamp, level, message }) => `${timestamp} [${level}]: ${message}`)
             )
         }),
-        new transports.DailyRotateFile({
-            filename: `${logPath}/laurus-%DATE%.log`,
-            datePattern: 'DD-MM-YYYY',
-            zippedArchive: true,
-            maxSize: '20m',
-            maxFiles: '30d',
-            level: 'notice',
-            format: format.combine(
-                format.timestamp({ format: 'DD-MM-YYYY HH:mm:ss' }),
-                format.printf(({ timestamp, level, message }) => `${timestamp} [${level}]: ${message}`)
-            ),
-        }),
     ],
 });
 
 export default logger;
-//#endregion _logger
 
 //#region _date-fns
 export function formatarDataPadraoUsuario(data: string | Date, formato: string = 'dd/MM/yyyy'): string {
