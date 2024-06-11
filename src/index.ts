@@ -22,7 +22,7 @@ import dbConnect from './utils/dbConnect';
 
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-const uri = process.env.URI;
+const uri = process.env.MONGODB_URI;
 if (!uri) {
     throw new Error(resource('erro.variavelAmbiente'));
 }
