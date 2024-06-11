@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import Usuario from '../models/usuario';
 import { responderAPI } from '../utils/commons';
 import { Request, Response, NextFunction } from 'express';

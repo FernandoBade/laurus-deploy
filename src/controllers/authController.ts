@@ -1,7 +1,7 @@
 import logger, { resource, responderAPI } from '../utils/commons';
 import { Request, Response } from 'express';
 import Usuario from '../models/usuario';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 import Token from '../models/token';

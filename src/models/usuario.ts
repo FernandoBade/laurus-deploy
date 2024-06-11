@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import { EnumMoedas, EnumFormatoData, EnumIdiomas, EnumAparencias } from '../utils/assets/enums';
 import logger, { resource } from '../utils/commons';
 
