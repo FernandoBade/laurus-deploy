@@ -1,6 +1,7 @@
 //#region imports
 import authRoutes from './routes/authRoutes';
 import express, { Request, Response, NextFunction } from 'express';
+import cors from 'cors';
 import cartaoCreditoRoutes from './routes/cartaoCreditoRoutes';
 import contaRoutes from './routes/contaRoutes';
 import despesaCartaoCreditoRoutes from './routes/despesaCartaoCreditoRoutes';
@@ -34,6 +35,13 @@ dbConnect().then(() => {
 });
 
 const app = express();
+
+// Configuração do CORS
+app.use(cors({
+    origin: 'http://localhost:3000', // Defina a origem permitida
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Defina os métodos HTTP permitidos
+    allowedHeaders: ['Content-Type', 'Authorization'], // Defina os cabeçalhos permitidos
+}));
 
 app.use(express.json());
 
